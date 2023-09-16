@@ -1,0 +1,20 @@
+[package]
+name = "mt"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "cli"
+path = "src/bin/cli.rs"
+
+[[bin]]
+name = "server"
+path = "src/bin/server.rs"
+
+[dependencies]
+clap = { version = "4.4", features = ["derive"] }
+salvo = { version = "0.55", features = ["acme", "quinn"]}
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1.32.0", features = ["full"] }
